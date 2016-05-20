@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupCell" id="gTV-IL-0wX" customClass="GroupPhotoCell" customModule="PhotoSelectorProductSwift" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupCell" id="gTV-IL-0wX" customClass="GroupPhotoCell" customModule="QRCodeScanning" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -16,45 +16,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YAc-0g-xIB">
                         <rect key="frame" x="0.0" y="0.0" width="122" height="111"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="V2C-wM-EDQ">
-                        <rect key="frame" x="100" y="2" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="8JH-t7-Vfg"/>
-                            <constraint firstAttribute="width" constant="20" id="DEE-GG-KiP"/>
-                        </constraints>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-we-Wd1">
-                        <rect key="frame" x="78" y="0.0" width="44" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="44" id="K4e-ll-U9A"/>
-                            <constraint firstAttribute="width" constant="44" id="cYO-a2-da0"/>
-                        </constraints>
-                        <connections>
-                            <action selector="selectButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tK6-2t-23v"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="Ncn-we-Wd1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5b6-49-HHD"/>
                 <constraint firstAttribute="trailing" secondItem="YAc-0g-xIB" secondAttribute="trailing" id="F1L-Gm-rIf"/>
-                <constraint firstAttribute="trailing" secondItem="V2C-wM-EDQ" secondAttribute="trailing" constant="2" id="GGa-hj-YgL"/>
                 <constraint firstItem="YAc-0g-xIB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ZxW-6r-EkF"/>
-                <constraint firstAttribute="trailing" secondItem="Ncn-we-Wd1" secondAttribute="trailing" id="fC9-Bo-OlJ"/>
-                <constraint firstItem="V2C-wM-EDQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="lEa-1K-H47"/>
                 <constraint firstItem="YAc-0g-xIB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lfN-T5-CAg"/>
                 <constraint firstAttribute="bottom" secondItem="YAc-0g-xIB" secondAttribute="bottom" id="vdu-ip-NeU"/>
             </constraints>
             <size key="customSize" width="122" height="111"/>
             <connections>
                 <outlet property="imageV" destination="YAc-0g-xIB" id="G1r-st-gng"/>
-                <outlet property="selectImage" destination="V2C-wM-EDQ" id="QmG-lN-GrJ"/>
             </connections>
             <point key="canvasLocation" x="482" y="463.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Unknown" width="200" height="200"/>
-    </resources>
 </document>

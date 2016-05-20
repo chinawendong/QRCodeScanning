@@ -23,11 +23,14 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     let dispatchQueue : dispatch_queue_t = dispatch_queue_create("com.myqueue.www", DISPATCH_QUEUE_SERIAL)
     //提示label
     let maskText = CATextLayer()
+    //扫描动画
+    let basA = CABasicAnimation.init(keyPath: "bounds")
     
     var scanResults : ScanResults?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.loadCapture()
         self.loadToobar()
     }
@@ -48,15 +51,14 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
             al.show()
             return
         }
-        
-        //设置自动对焦
+        //放大
         do {
-            try self.captureDevice.lockForConfiguration()
-        }catch let error {
-            fatalError("\(error)")
+            try self.captureDevice!.lockForConfiguration()
+        } catch _ {
+            NSLog("Error: lockForConfiguration.");
         }
-        self.captureDevice.focusMode = .ContinuousAutoFocus
-        self.captureDevice.unlockForConfiguration()
+        self.captureDevice!.videoZoomFactor = 4.0
+        self.captureDevice!.unlockForConfiguration()
         //初始化输出流
         let captureMetadataOutput = AVCaptureMetadataOutput.init()
         
@@ -75,6 +77,7 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
         captureMetadataOutput.rectOfInterest = self.getRectOfInterest()
         
         self.captureSession.sessionPreset = AVCaptureSessionPresetHigh
+        
         
         print(self.getRectOfInterest())
         //创建输出对象
@@ -107,6 +110,7 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
         leftB.imageView?.contentMode = .ScaleAspectFit
         leftB.bounds = CGRectMake(0, 0, 60, 60)
         leftB.addTarget(self, action: #selector(photoSelect), forControlEvents: UIControlEvents.TouchUpInside)
+        
         let leftBar = UIBarButtonItem.init(customView:leftB)
         
         let rigthB = UIButton.init(type: UIButtonType.Custom)
@@ -179,13 +183,15 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
         fillLayer.addSublayer(maskBommRigth)
         fillLayer.addSublayer(maskLink)
         fillLayer.addSublayer(maskText)
+        
+        //避免重复添加
+        maskLink.removeAllAnimations()
         //添加扫描动画
-        maskLink.addAnimation(self.animation(), forKey: "")
+        maskLink.addAnimation(self.animation(), forKey: "bounds")
     }
     
     func animation() -> CABasicAnimation {
         //扫描动画
-        let basA = CABasicAnimation.init(keyPath: "bounds")
         basA.toValue = NSValue.init(CGRect: CGRectMake(0, 0, 2 * CGRectGetWidth(UIScreen.mainScreen().bounds) / 3, 2 * CGRectGetWidth(UIScreen.mainScreen().bounds) / 3))
         basA.duration = 2
         basA.removedOnCompletion = false;
@@ -223,17 +229,22 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     }
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        //        print(metadataObjects)
-        if metadataObjects.count != 0 {
-            let readableCodeObject = metadataObjects.first as! AVMetadataMachineReadableCodeObject
-            dispatch_async(dispatch_get_main_queue(), {
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                self.stopRunning()
-                if let scan = self.scanResults {
-                    scan(results: readableCodeObject.stringValue)
-                }
-            })
+        
+        guard metadataObjects.count > 0 else {
+            return
         }
+        
+        let readableCodeObject = metadataObjects.first as! AVMetadataMachineReadableCodeObject
+        dispatch_async(dispatch_get_main_queue(), {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            self.stopRunning()
+            if let scan = self.scanResults {
+                scan(results: readableCodeObject.stringValue)
+            }
+            let al = UIAlertView.init(title: "扫描结果", message:readableCodeObject.stringValue, delegate: self, cancelButtonTitle: "Canal" ,otherButtonTitles: "OK")
+            al.tag = 100
+            al.show()
+        })
         
     }
     
@@ -241,29 +252,39 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     func QRcode(image : UIImage) {
         
         let detector = CIDetector.init(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
-        let detectorArray = detector.featuresInImage(CIImage.init(image: image)!)
-       
-        if detectorArray.count > 0 {
-            let feature = detectorArray.first as? CIQRCodeFeature
-            dispatch_async(dispatch_get_main_queue(), {
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                self.stopRunning()
-                if let scan = self.scanResults {
-                    scan(results: (feature?.messageString)!)
-                }
-            })
-        }else {
+        var detectorArray : [AnyObject]?
+        detectorArray = detector.featuresInImage(CIImage.init(image: image)!)
+        
+        guard detectorArray?.count > 0 else {
             let al = UIAlertView.init(title: "🐶🐱🐔🐑🐰🐯", message: "该图片没有包含一个二维码", delegate: nil, cancelButtonTitle: "OK")
             al.show()
+            return
         }
+        
+        let feature = detectorArray!.first as? CIQRCodeFeature
+        dispatch_async(dispatch_get_main_queue(), {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            self.stopRunning()
+            if let scan = self.scanResults {
+                scan(results: (feature?.messageString)!)
+            }
+            let al = UIAlertView.init(title: "扫描结果", message:(feature?.messageString)!, delegate: self, cancelButtonTitle: "Canal" ,otherButtonTitles: "OK")
+            al.tag = 100
+            al.show()
+        })
+        
+        
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 0 {
+        if buttonIndex == 0 && alertView.tag != 100{
             let url = NSURL.init(string: UIApplicationOpenSettingsURLString)
             if UIApplication.sharedApplication().canOpenURL(url!) {
                 UIApplication.sharedApplication().openURL(url!)
             }
+        }
+        if buttonIndex != 0 && alertView.tag == 100 {
+            self.startRunning()
         }
     }
     

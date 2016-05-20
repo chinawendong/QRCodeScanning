@@ -15,18 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.v = QRXodeScanningView(frame: self.view.bounds)
-        v!.scanResults = {(results)-> Void in
-            print(results)
-            let two = WebViewController()
-            two.sting = results
-            self.navigationController?.pushViewController(two, animated: true)
-        }
+//        v!.scanResults = {(results)-> Void in
+//            print(results)
+//            let two = WebViewController()
+//            two.sting = results
+//            self.navigationController?.pushViewController(two, animated: true)
+//        }
         self.view.addSubview(v!)
         
-    }
-    
-    func hasFlash() {
-
     }
     
     override func viewWillAppear(animated: Bool) {

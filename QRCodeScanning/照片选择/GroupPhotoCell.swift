@@ -15,22 +15,23 @@ enum GroupPhotoCellImageType {
 
 class GroupPhotoCell: UICollectionViewCell {
 
-    @IBOutlet weak var selectImage: UIImageView!
+//    @IBOutlet weak var selectImage: UIImageView!
     @IBOutlet weak var imageV: UIImageView!
     var selectImageBlock : (()->Void)?
     
-    var selectType : GroupPhotoCellImageType? {
-        didSet {
-            switch self.selectType! {
-            case .Nome:
-                self.selectImage.image = UIImage.init(named: "Unknown")
-            case .Select:
-                self.selectImage.image = UIImage.init(named: "Unknown-1")
-            default:
-                break
-            }
-        }
-    }
+    var selectType : GroupPhotoCellImageType?
+//    {
+//        didSet {
+//            switch self.selectType! {
+//            case .Nome:
+//                self.selectImage.image = UIImage.init(named: "Unknown")
+//            case .Select:
+//                self.selectImage.image = UIImage.init(named: "Unknown-1")
+//            default:
+//                break
+//            }
+//        }
+//    }
     
     func SelectImageBlock() {
         self.selectImageBlock?()

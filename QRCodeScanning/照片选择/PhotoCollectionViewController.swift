@@ -34,13 +34,13 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
         if self.group != nil {
             self.title = (self.group!.valueForProperty(ALAssetsGroupPropertyName) as! String)
             PhotoAlbumMamager.sharedInstance.getAssetArrayWithGroup(self.group) { (array) in
-                self.itemArray = array
+                self.itemArray = array.reverse()
                 self.collectionView?.reloadData()
             }
         }else {
             self.title = "相机胶卷"
             PhotoAlbumMamager.sharedInstance.getCameraFilm({ (array) in
-                self.itemArray = array
+                self.itemArray = array.reverse()
                 self.collectionView?.reloadData()
             })
         }
