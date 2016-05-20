@@ -7,15 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73403E1F1CED5A4700930A15 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E1E1CED5A4700930A15 /* WebViewController.swift */; };
+		73403E4C1CEDB42400930A15 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73403E4B1CEDB42400930A15 /* AssetsLibrary.framework */; };
+		73403EAA1CEDBB5200930A15 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E991CEDBB5200930A15 /* PopUpView.swift */; };
+		73403EAB1CEDBB5200930A15 /* HerdViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9A1CEDBB5200930A15 /* HerdViewCell.swift */; };
+		73403EAC1CEDBB5200930A15 /* HerdCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9B1CEDBB5200930A15 /* HerdCollectionViewFlowLayout.swift */; };
+		73403EAD1CEDBB5300930A15 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9C1CEDBB5200930A15 /* PhotoCell.swift */; };
+		73403EAE1CEDBB5300930A15 /* PhotoAlbumMamager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9D1CEDBB5200930A15 /* PhotoAlbumMamager.swift */; };
+		73403EAF1CEDBB5300930A15 /* PhotoGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9E1CEDBB5200930A15 /* PhotoGroupViewController.swift */; };
+		73403EB01CEDBB5300930A15 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403E9F1CEDBB5200930A15 /* PhotoCollectionViewController.swift */; };
+		73403EB11CEDBB5300930A15 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403EA01CEDBB5200930A15 /* ButtonCell.swift */; };
+		73403EB21CEDBB5300930A15 /* GroupPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403EA11CEDBB5200930A15 /* GroupPhotoCell.swift */; };
+		73403EB31CEDBB5300930A15 /* PhotoBrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403EA21CEDBB5200930A15 /* PhotoBrowseViewController.swift */; };
+		73403EB41CEDBB5300930A15 /* BrowseCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403EA31CEDBB5200930A15 /* BrowseCollectionViewLayout.swift */; };
+		73403EB51CEDBB5300930A15 /* BrowseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73403EA41CEDBB5200930A15 /* BrowseCell.swift */; };
+		73403EB61CEDBB5300930A15 /* BrowseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73403EA51CEDBB5200930A15 /* BrowseCell.xib */; };
+		73403EB71CEDBB5300930A15 /* GroupPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73403EA61CEDBB5200930A15 /* GroupPhotoCell.xib */; };
+		73403EB81CEDBB5300930A15 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73403EA71CEDBB5200930A15 /* ButtonCell.xib */; };
+		73403EB91CEDBB5300930A15 /* HerdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73403EA81CEDBB5200930A15 /* HerdViewCell.xib */; };
+		73403EBA1CEDBB5300930A15 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73403EA91CEDBB5200930A15 /* PhotoCell.xib */; };
 		735834A51CEAAFFB00DB03BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735834A41CEAAFFB00DB03BA /* AppDelegate.swift */; };
 		735834A71CEAAFFB00DB03BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735834A61CEAAFFB00DB03BA /* ViewController.swift */; };
 		735834AA1CEAAFFB00DB03BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735834A81CEAAFFB00DB03BA /* Main.storyboard */; };
 		735834AD1CEAAFFB00DB03BA /* QRCodeScanning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 735834AB1CEAAFFB00DB03BA /* QRCodeScanning.xcdatamodeld */; };
 		735834AF1CEAAFFB00DB03BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735834AE1CEAAFFB00DB03BA /* Assets.xcassets */; };
 		735834B21CEAAFFB00DB03BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735834B01CEAAFFB00DB03BA /* LaunchScreen.storyboard */; };
+		735834BA1CEAB08800DB03BA /* QRXodeScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735834B91CEAB08800DB03BA /* QRXodeScanningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73403E1E1CED5A4700930A15 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		73403E4B1CEDB42400930A15 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		73403E991CEDBB5200930A15 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		73403E9A1CEDBB5200930A15 /* HerdViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerdViewCell.swift; sourceTree = "<group>"; };
+		73403E9B1CEDBB5200930A15 /* HerdCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HerdCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		73403E9C1CEDBB5200930A15 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		73403E9D1CEDBB5200930A15 /* PhotoAlbumMamager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumMamager.swift; sourceTree = "<group>"; };
+		73403E9E1CEDBB5200930A15 /* PhotoGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGroupViewController.swift; sourceTree = "<group>"; };
+		73403E9F1CEDBB5200930A15 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		73403EA01CEDBB5200930A15 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		73403EA11CEDBB5200930A15 /* GroupPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPhotoCell.swift; sourceTree = "<group>"; };
+		73403EA21CEDBB5200930A15 /* PhotoBrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowseViewController.swift; sourceTree = "<group>"; };
+		73403EA31CEDBB5200930A15 /* BrowseCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewLayout.swift; sourceTree = "<group>"; };
+		73403EA41CEDBB5200930A15 /* BrowseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseCell.swift; sourceTree = "<group>"; };
+		73403EA51CEDBB5200930A15 /* BrowseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseCell.xib; sourceTree = "<group>"; };
+		73403EA61CEDBB5200930A15 /* GroupPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupPhotoCell.xib; sourceTree = "<group>"; };
+		73403EA71CEDBB5200930A15 /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		73403EA81CEDBB5200930A15 /* HerdViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HerdViewCell.xib; sourceTree = "<group>"; };
+		73403EA91CEDBB5200930A15 /* PhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		735834A11CEAAFFB00DB03BA /* QRCodeScanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeScanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735834A41CEAAFFB00DB03BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		735834A61CEAAFFB00DB03BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +63,7 @@
 		735834AE1CEAAFFB00DB03BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		735834B11CEAAFFB00DB03BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		735834B31CEAAFFB00DB03BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		735834B91CEAB08800DB03BA /* QRXodeScanningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRXodeScanningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,15 +71,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73403E4C1CEDB42400930A15 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73403E201CEDB28B00930A15 /* 照片选择 */ = {
+			isa = PBXGroup;
+			children = (
+				73403E991CEDBB5200930A15 /* PopUpView.swift */,
+				73403E9A1CEDBB5200930A15 /* HerdViewCell.swift */,
+				73403E9B1CEDBB5200930A15 /* HerdCollectionViewFlowLayout.swift */,
+				73403E9C1CEDBB5200930A15 /* PhotoCell.swift */,
+				73403E9D1CEDBB5200930A15 /* PhotoAlbumMamager.swift */,
+				73403E9E1CEDBB5200930A15 /* PhotoGroupViewController.swift */,
+				73403E9F1CEDBB5200930A15 /* PhotoCollectionViewController.swift */,
+				73403EA01CEDBB5200930A15 /* ButtonCell.swift */,
+				73403EA11CEDBB5200930A15 /* GroupPhotoCell.swift */,
+				73403EA21CEDBB5200930A15 /* PhotoBrowseViewController.swift */,
+				73403EA31CEDBB5200930A15 /* BrowseCollectionViewLayout.swift */,
+				73403EA41CEDBB5200930A15 /* BrowseCell.swift */,
+				73403EA51CEDBB5200930A15 /* BrowseCell.xib */,
+				73403EA61CEDBB5200930A15 /* GroupPhotoCell.xib */,
+				73403EA71CEDBB5200930A15 /* ButtonCell.xib */,
+				73403EA81CEDBB5200930A15 /* HerdViewCell.xib */,
+				73403EA91CEDBB5200930A15 /* PhotoCell.xib */,
+			);
+			path = "照片选择";
+			sourceTree = "<group>";
+		};
 		735834981CEAAFFB00DB03BA = {
 			isa = PBXGroup;
 			children = (
+				73403E4B1CEDB42400930A15 /* AssetsLibrary.framework */,
 				735834A31CEAAFFB00DB03BA /* QRCodeScanning */,
 				735834A21CEAAFFB00DB03BA /* Products */,
 			);
@@ -56,8 +122,11 @@
 		735834A31CEAAFFB00DB03BA /* QRCodeScanning */ = {
 			isa = PBXGroup;
 			children = (
+				73403E201CEDB28B00930A15 /* 照片选择 */,
 				735834A41CEAAFFB00DB03BA /* AppDelegate.swift */,
 				735834A61CEAAFFB00DB03BA /* ViewController.swift */,
+				735834B91CEAB08800DB03BA /* QRXodeScanningView.swift */,
+				73403E1E1CED5A4700930A15 /* WebViewController.swift */,
 				735834A81CEAAFFB00DB03BA /* Main.storyboard */,
 				735834AE1CEAAFFB00DB03BA /* Assets.xcassets */,
 				735834B01CEAAFFB00DB03BA /* LaunchScreen.storyboard */,
@@ -99,7 +168,7 @@
 				TargetAttributes = {
 					735834A01CEAAFFB00DB03BA = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6GMAX85SJ3;
+						DevelopmentTeam = 9CJP9J82HZ;
 					};
 				};
 			};
@@ -126,9 +195,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73403EBA1CEDBB5300930A15 /* PhotoCell.xib in Resources */,
+				73403EB71CEDBB5300930A15 /* GroupPhotoCell.xib in Resources */,
 				735834B21CEAAFFB00DB03BA /* LaunchScreen.storyboard in Resources */,
+				73403EB61CEDBB5300930A15 /* BrowseCell.xib in Resources */,
+				73403EB81CEDBB5300930A15 /* ButtonCell.xib in Resources */,
 				735834AF1CEAAFFB00DB03BA /* Assets.xcassets in Resources */,
 				735834AA1CEAAFFB00DB03BA /* Main.storyboard in Resources */,
+				73403EB91CEDBB5300930A15 /* HerdViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +213,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73403EAB1CEDBB5200930A15 /* HerdViewCell.swift in Sources */,
+				73403EB11CEDBB5300930A15 /* ButtonCell.swift in Sources */,
+				73403EAD1CEDBB5300930A15 /* PhotoCell.swift in Sources */,
+				73403EB31CEDBB5300930A15 /* PhotoBrowseViewController.swift in Sources */,
+				73403EB41CEDBB5300930A15 /* BrowseCollectionViewLayout.swift in Sources */,
+				73403EAC1CEDBB5200930A15 /* HerdCollectionViewFlowLayout.swift in Sources */,
+				73403EB21CEDBB5300930A15 /* GroupPhotoCell.swift in Sources */,
 				735834A71CEAAFFB00DB03BA /* ViewController.swift in Sources */,
 				735834AD1CEAAFFB00DB03BA /* QRCodeScanning.xcdatamodeld in Sources */,
+				735834BA1CEAB08800DB03BA /* QRXodeScanningView.swift in Sources */,
+				73403EAF1CEDBB5300930A15 /* PhotoGroupViewController.swift in Sources */,
+				73403EB01CEDBB5300930A15 /* PhotoCollectionViewController.swift in Sources */,
+				73403EAA1CEDBB5200930A15 /* PopUpView.swift in Sources */,
+				73403EAE1CEDBB5300930A15 /* PhotoAlbumMamager.swift in Sources */,
+				73403EB51CEDBB5300930A15 /* BrowseCell.swift in Sources */,
+				73403E1F1CED5A4700930A15 /* WebViewController.swift in Sources */,
 				735834A51CEAAFFB00DB03BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,10 +344,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QRCodeScanning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wenzhongbin.QRCodeScanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -267,10 +358,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = QRCodeScanning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wenzhongbin.QRCodeScanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -293,6 +387,7 @@
 				735834B81CEAAFFB00DB03BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
