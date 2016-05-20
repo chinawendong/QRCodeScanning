@@ -164,9 +164,7 @@ class PhotoCollectionViewController: UICollectionViewController, UICollectionVie
         //        }
         //        self.navigationController?.pushViewController(beowseView, animated: true)
         let asset = itemArray[indexPath.row] as! ALAsset
-        
-        PopUpView.manager.selectImagesBlock!(selectImages: UIImage.init(CGImage: asset.aspectRatioThumbnail().takeUnretainedValue()))
-        
+        PopUpView.manager.selectImagesBlock!(selectImages: UIImage.init(CGImage: asset.defaultRepresentation().fullScreenImage().takeUnretainedValue()))
         self.dissmiss()
     }
     

@@ -12,7 +12,7 @@ import AVFoundation
 
 typealias ScanResults = ((results : String)->Void)
 
-class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate {
+class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     //会话
     let captureSession = AVCaptureSession()
     //获取相机实例
@@ -81,7 +81,7 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatchQueue)
         
         //设置元数据类型
-        captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]
+        captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeUPCECode,AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeEAN13Code,AVMetadataObjectTypeEAN8Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode128Code,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode]
         
         //设置扫描区域
         captureMetadataOutput.rectOfInterest = self.getRectOfInterest()
@@ -254,11 +254,9 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     
     //识别图片二维码
     func QRcode(image : UIImage) {
-        
         let detector = CIDetector.init(ofType: CIDetectorTypeQRCode, context: nil, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
         var detectorArray : [AnyObject]?
-        detectorArray = detector.featuresInImage(CIImage.init(image: image)!)
-        
+        detectorArray = detector.featuresInImage(CIImage.init(CGImage: image.CGImage!))
         guard detectorArray?.count > 0 else {
             let al = UIAlertView.init(title: "🐶🐱🐔🐑🐰🐯", message: "该图片没有包含一个二维码", delegate: nil, cancelButtonTitle: "OK")
             al.show()
@@ -276,8 +274,6 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
             al.tag = 100
             al.show()
         })
-        
-        
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
@@ -314,12 +310,13 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     func photoSelect() {
         dispatch_async(dispatch_get_main_queue()) {
             PhotoAlbumMamager.sharedInstance.pushPhotoViewController(self)
+            self.stopRunning()
         }
         PopUpView.manager.getSelectImages {
             (selectImage) in
             self.QRcode(selectImage)
         }
-    }
+}
     /*
      // Only override drawRect: if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.

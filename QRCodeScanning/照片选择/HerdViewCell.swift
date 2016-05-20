@@ -39,7 +39,7 @@ class HerdViewCell: UITableViewCell, HerdCollectionViewFlowLayoutDelegate,UIColl
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let asset = photoArray[indexPath.row] as! ALAsset
-        let image = UIImage.init(CGImage: asset.aspectRatioThumbnail().takeUnretainedValue())
+        let image = UIImage.init(CGImage: asset.defaultRepresentation().fullScreenImage().takeUnretainedValue())
         PopUpView.manager.selectBlock?(selectImage: image)
         PopUpView.manager.dissmiss()
     }
