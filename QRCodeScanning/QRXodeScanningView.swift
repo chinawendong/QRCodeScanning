@@ -25,6 +25,16 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     let maskText = CATextLayer()
     //扫描动画
     let basA = CABasicAnimation.init(keyPath: "bounds")
+    //上左
+    let maskTopLeft = CALayer()
+    //上右
+    let maskTopRigth = CALayer()
+    //下左
+    let maskBommLeft = CALayer()
+    //下右
+    let maskBommRigth = CALayer()
+    //扫描线条
+    let maskLink = CALayer()
     
     var scanResults : ScanResults?
     
@@ -140,28 +150,22 @@ class QRXodeScanningView: UIView,AVCaptureMetadataOutputObjectsDelegate,UIAlertV
     }
     
     func loadLayer(fillLayer : CALayer, myRect : CGRect) {
-        //上左
-        let maskTopLeft = CALayer()
         maskTopLeft.contents = UIImage.init(named: "scan_1")?.CGImage
         maskTopLeft.bounds = CGRectMake(0, 0, 20, 20)
         maskTopLeft.position = CGPointMake(myRect.origin.x, myRect.origin.y)
-        //上右
-        let maskTopRigth = CALayer()
+
         maskTopRigth.contents = UIImage.init(named:"scan_2")?.CGImage
         maskTopRigth.bounds = CGRectMake(0, 0, 20, 20)
         maskTopRigth.position =  CGPointMake(myRect.origin.x + CGRectGetWidth(myRect),myRect.origin.y)
-        //下左
-        let maskBommLeft = CALayer()
+  
         maskBommLeft.contents = UIImage.init(named: "scan_3")?.CGImage
         maskBommLeft.bounds = CGRectMake(0, 0, 20, 20)
         maskBommLeft.position = CGPointMake(myRect.origin.x, myRect.origin.y + CGRectGetWidth(myRect))
-        //下右
-        let maskBommRigth = CALayer()
+
         maskBommRigth.contents = UIImage.init(named:"scan_4")?.CGImage
         maskBommRigth.bounds = CGRectMake(0, 0, 20, 20)
         maskBommRigth.position = CGPointMake(myRect.origin.x + CGRectGetWidth(myRect),myRect.origin.y + CGRectGetWidth(myRect))
-        //扫描线条
-        let maskLink = CALayer()
+
         maskLink.bounds = CGRectMake(0, 0, 2 * CGRectGetWidth(UIScreen.mainScreen().bounds) / 3, 0)
         maskLink.contents = UIImage.init(named: "scan_net")?.CGImage
         maskLink.position = CGPointMake(myRect.origin.x + CGRectGetWidth(maskLink.bounds) / 2, myRect.origin.y)
